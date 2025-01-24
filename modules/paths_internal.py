@@ -9,7 +9,7 @@ from pathlib import Path
 
 normalized_filepath = lambda filepath: str(Path(filepath).absolute())
 
-commandline_args = os.environ.get('COMMANDLINE_ARGS', "")
+commandline_args = os.environ.get('COMMANDLINE_ARGS', "--skip-torch-cuda-test --opt-sdp-attention --precision full --no-half")
 sys.argv += shlex.split(commandline_args)
 
 cwd = os.getcwd()
